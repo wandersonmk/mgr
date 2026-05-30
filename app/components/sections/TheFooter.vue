@@ -1,5 +1,162 @@
 <script setup lang="ts">
-// Footer institucional — componente visual
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+
+const UPDATED = '30 de maio de 2026'
+
+const privacy = {
+  title: 'Política de Privacidade',
+  sections: [
+    {
+      h: '1. Quem somos',
+      p: [
+        'Esta Política de Privacidade descreve como a Madeira Verde LTDA (CNPJ 10.928.862/0001-32), responsável pelo produto digital MGR – Manual do Guarda Roupa, coleta, usa, armazena e protege os seus dados pessoais.',
+        'Ao acessar este site e/ou adquirir o produto, você concorda com as práticas descritas nesta política, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – LGPD).',
+      ],
+    },
+    {
+      h: '2. Dados que coletamos',
+      p: [
+        'Dados fornecidos por você: nome, e-mail, telefone/WhatsApp e dados necessários para a compra (processados pela plataforma de pagamento).',
+        'Dados de navegação: endereço IP, tipo de dispositivo e navegador, páginas visitadas e tempo de permanência, coletados por meio de cookies e tecnologias similares.',
+      ],
+    },
+    {
+      h: '3. Como usamos os seus dados',
+      p: [
+        'Utilizamos os dados para processar a compra e liberar o acesso ao produto; prestar suporte e atendimento; enviar comunicações sobre o produto e ofertas; melhorar a experiência do site; e cumprir obrigações legais.',
+      ],
+    },
+    {
+      h: '4. Compartilhamento de dados',
+      p: [
+        'A compra é processada pela plataforma Hotmart, que possui política de privacidade própria. Podemos compartilhar dados com processadores de pagamento, ferramentas de e-mail/atendimento e autoridades, quando exigido por lei.',
+        'Não vendemos os seus dados pessoais a terceiros.',
+      ],
+    },
+    {
+      h: '5. Cookies',
+      p: [
+        'Usamos cookies para o funcionamento do site, métricas e personalização. Você pode gerenciar ou bloquear cookies nas configurações do seu navegador, ciente de que isso pode afetar algumas funcionalidades.',
+      ],
+    },
+    {
+      h: '6. Armazenamento e segurança',
+      p: [
+        'Adotamos medidas técnicas e organizacionais para proteger os seus dados contra acesso não autorizado, perda ou alteração. Nenhum método de transmissão pela internet é 100% seguro, mas trabalhamos para manter um ambiente protegido.',
+      ],
+    },
+    {
+      h: '7. Seus direitos (LGPD)',
+      p: [
+        'Você pode solicitar a qualquer momento: confirmação e acesso aos seus dados; correção de dados incompletos ou desatualizados; anonimização ou exclusão; portabilidade; e revogação do consentimento. Para exercer esses direitos, entre em contato pelos canais informados ao final.',
+      ],
+    },
+    {
+      h: '8. Retenção dos dados',
+      p: [
+        'Mantemos os dados pelo tempo necessário para cumprir as finalidades descritas e as obrigações legais e fiscais aplicáveis.',
+      ],
+    },
+    {
+      h: '9. Alterações desta política',
+      p: [
+        'Esta política pode ser atualizada periodicamente. A versão vigente estará sempre disponível nesta página, com a data da última atualização.',
+      ],
+    },
+    {
+      h: '10. Contato',
+      p: [
+        'Em caso de dúvidas sobre esta Política de Privacidade ou sobre seus dados, fale conosco pelo WhatsApp (11) 95071-2707.',
+      ],
+    },
+  ],
+}
+
+const terms = {
+  title: 'Termos de Uso',
+  sections: [
+    {
+      h: '1. Aceitação dos termos',
+      p: [
+        'Ao acessar este site e/ou adquirir o produto MGR – Manual do Guarda Roupa, você declara ter lido e concordado com estes Termos de Uso. Caso não concorde, não utilize o site nem realize a compra.',
+      ],
+    },
+    {
+      h: '2. Sobre o produto',
+      p: [
+        'O MGR – Manual do Guarda Roupa é um produto 100% digital, composto por materiais como projetos, planilhas, listas de materiais e videoaulas, entregues e acessados online após a confirmação do pagamento.',
+        'A compra concede uma licença de uso pessoal e intransferível do conteúdo.',
+      ],
+    },
+    {
+      h: '3. Pagamento e acesso',
+      p: [
+        'O pagamento é processado pela plataforma Hotmart. Após a confirmação, o acesso é liberado conforme as condições da plataforma. Eventuais impostos e tarifas seguem as regras vigentes.',
+      ],
+    },
+    {
+      h: '4. Garantia e reembolso',
+      p: [
+        'Você conta com garantia incondicional de 7 (sete) dias a partir da confirmação da compra. Se não ficar satisfeito por qualquer motivo dentro desse prazo, basta solicitar o reembolso e devolveremos 100% do valor pago, conforme a política da Hotmart.',
+      ],
+    },
+    {
+      h: '5. Propriedade intelectual',
+      p: [
+        'Todo o conteúdo do produto e do site (textos, imagens, projetos, planilhas, vídeos, marca e layout) é protegido por direitos autorais e pertence à Madeira Verde LTDA. É proibido copiar, reproduzir, distribuir, revender ou compartilhar o conteúdo, no todo ou em parte, sem autorização expressa.',
+      ],
+    },
+    {
+      h: '6. Uso permitido e proibições',
+      p: [
+        'O acesso é individual. É vedado compartilhar login/credenciais, disponibilizar o material a terceiros ou utilizá-lo para fins ilícitos. O descumprimento pode acarretar o cancelamento do acesso, sem reembolso, além das medidas legais cabíveis.',
+      ],
+    },
+    {
+      h: '7. Isenção sobre resultados',
+      p: [
+        'Este produto tem caráter educativo/informativo e não garante resultados financeiros. Os resultados podem variar de pessoa para pessoa, dependendo de dedicação, esforço e aplicação do conteúdo.',
+      ],
+    },
+    {
+      h: '8. Limitação de responsabilidade',
+      p: [
+        'A Madeira Verde LTDA não se responsabiliza por decisões, orçamentos, contratações de terceiros, execução de projetos ou prejuízos decorrentes do uso ou da interpretação do conteúdo pelo usuário.',
+      ],
+    },
+    {
+      h: '9. Suporte',
+      p: [
+        'O suporte ao cliente é prestado pelos canais oficiais informados, incluindo o WhatsApp (11) 95071-2707.',
+      ],
+    },
+    {
+      h: '10. Disposições gerais',
+      p: [
+        'Estes Termos podem ser atualizados a qualquer momento, valendo a versão publicada nesta página. Aplica-se a legislação brasileira, ficando eleito o foro do domicílio do consumidor para dirimir eventuais conflitos.',
+      ],
+    },
+  ],
+}
+
+const openDoc = ref<null | 'privacy' | 'terms'>(null)
+const currentDoc = computed(() =>
+  openDoc.value === 'privacy' ? privacy : openDoc.value === 'terms' ? terms : null,
+)
+function close() {
+  openDoc.value = null
+}
+function onKey(e: KeyboardEvent) {
+  if (e.key === 'Escape') close()
+}
+watch(openDoc, (v) => {
+  if (typeof document !== 'undefined') document.body.style.overflow = v ? 'hidden' : ''
+})
+onMounted(() => window.addEventListener('keydown', onKey))
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onKey)
+  if (typeof document !== 'undefined') document.body.style.overflow = ''
+})
 </script>
 
 <template>
@@ -171,8 +328,55 @@
         <p class="mx-auto mt-3 max-w-3xl leading-snug text-[#A9A9A9]" style="font-size:clamp(0.82rem,1.1vw,0.95rem);">
           Este produto não garante resultados financeiros. Os resultados podem variar de pessoa para pessoa, dependendo de dedicação, esforço e aplicação do conteúdo.
         </p>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1" style="font-size:0.85rem;">
+          <button type="button" class="font-semibold underline-offset-2 transition hover:underline" style="color:#D4AF37;" @click="openDoc = 'privacy'">
+            Política de Privacidade
+          </button>
+          <span style="color:#5A6B60;" aria-hidden="true">•</span>
+          <button type="button" class="font-semibold underline-offset-2 transition hover:underline" style="color:#D4AF37;" @click="openDoc = 'terms'">
+            Termos de Uso
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- ── MODAL LEGAL (Privacidade / Termos) ── -->
+    <Teleport to="body">
+      <Transition name="lmodal">
+        <div
+          v-if="openDoc"
+          class="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="currentDoc?.title"
+          @click.self="close"
+        >
+          <div class="relative flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl shadow-2xl" style="background:#F7F4EF;">
+            <!-- header -->
+            <div class="flex items-center justify-between gap-4 border-b px-5 py-4" style="background:#06291D; border-color:rgba(212,175,55,0.3);">
+              <h2 class="font-extrabold text-white" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.1rem,2.2vw,1.4rem);">{{ currentDoc?.title }}</h2>
+              <button type="button" aria-label="Fechar" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition hover:bg-white/15" @click="close">
+                <i class="fa-solid fa-xmark text-xl" aria-hidden="true"></i>
+              </button>
+            </div>
+            <!-- corpo (rolável) -->
+            <div class="overflow-y-auto px-5 py-5 sm:px-7">
+              <p class="mb-4 text-[0.8rem]" style="color:#6B6B6B;">Última atualização: {{ UPDATED }}</p>
+              <div v-for="(s, i) in currentDoc?.sections" :key="i" class="mb-4">
+                <h3 class="mb-1 font-extrabold" style="font-family:'Montserrat',sans-serif; color:#003321; font-size:1rem;">{{ s.h }}</h3>
+                <p v-for="(par, j) in s.p" :key="j" class="mb-1.5 leading-relaxed" style="color:#2B2B2B; font-size:0.92rem;">{{ par }}</p>
+              </div>
+            </div>
+            <!-- rodapé -->
+            <div class="border-t px-5 py-3 text-center" style="border-color:#E7E1D8;">
+              <button type="button" class="rounded-lg px-6 py-2 text-sm font-bold text-white transition hover:opacity-90" style="background:#06291D;" @click="close">
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </footer>
 </template>
 
@@ -181,5 +385,15 @@
 .mv-fade {
   -webkit-mask-image: radial-gradient(ellipse 94% 88% at 50% 50%, #000 72%, transparent 100%);
   mask-image: radial-gradient(ellipse 94% 88% at 50% 50%, #000 72%, transparent 100%);
+}
+
+/* Modal legal (Privacidade / Termos) */
+.lmodal-enter-active,
+.lmodal-leave-active {
+  transition: opacity 0.25s ease;
+}
+.lmodal-enter-from,
+.lmodal-leave-to {
+  opacity: 0;
 }
 </style>
