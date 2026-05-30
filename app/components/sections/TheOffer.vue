@@ -170,7 +170,9 @@ onBeforeUnmount(() => observer?.disconnect())
 
       <!-- ── CTA ── -->
       <a
-        href="#checkout"
+        href="https://pay.hotmart.com/F95310077Y"
+        target="_blank"
+        rel="noopener"
         data-reveal
         class="mt-5 flex items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center text-white transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0.5 sm:gap-4"
         style="background:linear-gradient(180deg,#FF6B00,#FF3D00); box-shadow:0 6px 0 #C23A00; touch-action:manipulation;"

@@ -25,3 +25,6 @@ logs
 
 # Claude Code / agent tooling
 .claude/
+
+# Build zips para hospedagem
+*.zip

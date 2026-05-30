@@ -2,7 +2,7 @@
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 
 // TODO: substituir pelo número real do WhatsApp (só dígitos, formato internacional: 55 + DDD + número)
-const WHATSAPP_NUMBER = '5599999999999'
+const WHATSAPP_NUMBER = '5511950712707'
 const WHATSAPP_MESSAGE =
   'Olá! Tenho dúvidas e preciso falar sobre o produto MGR (Manual do Guarda-Roupa).'
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`

@@ -59,7 +59,7 @@ onBeforeUnmount(() => observer?.disconnect())
     ref="root"
     aria-labelledby="problema-title"
     class="relative w-full overflow-hidden px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20"
-    style="background: linear-gradient(to bottom, #FAF6EE 0%, #F5EFE3 55%, #F0E9DB 100%);"
+    style="background: linear-gradient(to bottom, #FAF7F2 0%, #F7F4EF 55%, #F3EFE7 100%);"
   >
     <!-- brilho ambiente quente -->
     <div
@@ -89,23 +89,23 @@ onBeforeUnmount(() => observer?.disconnect())
         <div class="lg:col-start-1 lg:row-start-1" data-reveal>
           <span
             class="mb-3.5 block h-[5px] w-10 rounded-full"
-            style="background:#FF5700;"
+            style="background:#FF5A00;"
             aria-hidden="true"
           />
           <h2
             id="problema-title"
             class="font-extrabold leading-[1.12] tracking-tight"
-            style="font-family:'Montserrat',sans-serif; color:#0B1B14; font-size:clamp(1.55rem,3.4vw,2.5rem); letter-spacing:-0.5px;"
+            style="font-family:'Montserrat',sans-serif; color:#003321; font-size:clamp(1.55rem,3.4vw,2.5rem); letter-spacing:-0.5px;"
           >
             Você já percebeu por que um guarda-roupa planejado custa
-            <span style="color:#FF5700;">tão caro?</span>
+            <span style="color:#FF5A00;">tão caro?</span>
           </h2>
           <p
             class="mt-3.5 font-medium leading-relaxed"
-            style="color:#3D4A42; font-size:clamp(0.98rem,1.6vw,1.2rem);"
+            style="color:#1F1F1F; font-size:clamp(0.98rem,1.6vw,1.2rem);"
           >
             A maioria das pessoas paga
-            <span class="font-extrabold" style="color:#FF5700;">milhares a mais</span>
+            <span class="font-extrabold" style="color:#FF5A00;">milhares a mais</span>
             sem saber onde realmente está o abuso.
           </p>
         </div>
@@ -143,12 +143,12 @@ onBeforeUnmount(() => observer?.disconnect())
             style="border-color:rgba(255,255,255,0.9); box-shadow:0 16px 40px -14px rgba(11,27,20,0.6);"
           >
             <!-- Loja tradicional -->
-            <div class="px-3 pb-3 pt-2.5 text-center" style="background:linear-gradient(150deg,#1F3B2E,#0B1B14);">
+            <div class="px-3 pb-3 pt-2.5 text-center" style="background:linear-gradient(150deg,#005232,#003822);">
               <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.12em]" style="color:#C8D6CF;">
                 Loja Tradicional
               </p>
               <strong
-                class="block tabular-nums text-white line-through decoration-[#FF5700] decoration-2"
+                class="block tabular-nums text-white line-through decoration-[#E25A12] decoration-2"
                 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.15rem,1.5vw,1.35rem);"
               >
                 R$ 18.750,00
@@ -159,23 +159,23 @@ onBeforeUnmount(() => observer?.disconnect())
             <div class="relative px-3 pb-2.5 pt-5 text-center" style="background:#F7F2E9;">
               <span
                 class="absolute left-1/2 top-0 z-10 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white text-[0.62rem] font-black uppercase text-white"
-                style="background:linear-gradient(150deg,#1F3B2E,#0B1B14); box-shadow:0 5px 14px -5px rgba(11,27,20,0.65);"
+                style="background:linear-gradient(150deg,#005232,#003822); box-shadow:0 5px 14px -5px rgba(11,27,20,0.65);"
               >
                 vs
               </span>
-              <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.12em]" style="color:#0B1B14;">
+              <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.12em]" style="color:#003321;">
                 Custo Real
               </p>
               <strong
                 class="block tabular-nums"
-                style="font-family:'Montserrat',sans-serif; color:#0B1B14; font-size:clamp(1.4rem,1.9vw,1.65rem);"
+                style="font-family:'Montserrat',sans-serif; color:#003321; font-size:clamp(1.4rem,1.9vw,1.65rem);"
               >
                 R$ 5.625,00
               </strong>
             </div>
 
             <!-- Economia (faixa laranja) -->
-            <div class="px-3 pb-2.5 pt-2 text-center" style="background:linear-gradient(150deg,#FF5700,#E64E00);">
+            <div class="px-3 pb-2.5 pt-2 text-center" style="background:linear-gradient(150deg,#FF5B00,#E04E00);">
               <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.1em] text-white/90">
                 Economia Possível
               </p>
@@ -200,12 +200,12 @@ onBeforeUnmount(() => observer?.disconnect())
             data-reveal
             :style="`--d:${i * 100}ms`"
             class="group grid grid-cols-[54px_1fr] items-stretch gap-3.5 rounded-xl border p-3 transition-all duration-300 hover:-translate-y-0.5 sm:grid-cols-[62px_1fr] sm:gap-4"
-            style="background:rgba(255,255,255,0.72); border-color:rgba(11,27,20,0.06); box-shadow:0 10px 26px -20px rgba(11,27,20,0.4);"
+            style="background:#FFFFFF; border-color:#E7E1D8; box-shadow:0 10px 26px -20px #D8D3CC;"
           >
             <!-- ícone (caixa verde alta) -->
             <div
               class="flex items-center justify-center rounded-lg"
-              style="background:linear-gradient(160deg,#1F3B2E,#0B1B14); color:#D4AF37; min-height:70px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 16px -10px rgba(11,27,20,0.6);"
+              style="background:linear-gradient(160deg,#005A38,#003D28); color:#E8D2A6; min-height:70px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 16px -10px rgba(11,27,20,0.6);"
             >
               <i :class="`fa-solid ${pain.icon}`" class="text-2xl sm:text-[1.7rem]" aria-hidden="true"></i>
             </div>
@@ -213,16 +213,16 @@ onBeforeUnmount(() => observer?.disconnect())
             <div class="min-w-0 self-center">
               <h3
                 class="mb-1 font-extrabold uppercase leading-tight tracking-wide"
-                style="font-family:'Montserrat',sans-serif; color:#0B1B14; font-size:clamp(0.92rem,1.4vw,1.08rem);"
+                style="font-family:'Montserrat',sans-serif; color:#003321; font-size:clamp(0.92rem,1.4vw,1.08rem);"
               >
                 {{ pain.title }}
               </h3>
-              <p class="leading-snug" style="color:#566159; font-size:clamp(0.82rem,1.1vw,0.93rem);">
+              <p class="leading-snug" style="color:#2B2B2B; font-size:clamp(0.82rem,1.1vw,0.93rem);">
                 <template v-for="(part, idx) in pain.text.split(pain.highlight)" :key="idx">
                   {{ part }}<strong
                     v-if="idx === 0"
                     class="font-extrabold"
-                    style="color:#1F3B2E;"
+                    style="color:#003321;"
                   >{{ pain.highlight }}</strong>
                 </template>
               </p>
@@ -235,19 +235,19 @@ onBeforeUnmount(() => observer?.disconnect())
       <div
         data-reveal
         class="mt-10 flex flex-col items-center gap-3.5 rounded-t-2xl border-2 border-b-0 px-5 py-5 text-center sm:flex-row sm:gap-5 sm:px-8 sm:text-left md:mt-12"
-        style="border-color:#FF5700; background:linear-gradient(to bottom, rgba(255,87,0,0.07), rgba(255,87,0,0));"
+        style="border-color:#FF5A00; background:#FAF4EC;"
       >
         <i
           class="fa-solid fa-triangle-exclamation shrink-0"
-          style="color:#FF5700; font-size:clamp(2.2rem,4.5vw,2.9rem);"
+          style="color:#F05A00; font-size:clamp(2.2rem,4.5vw,2.9rem);"
           aria-hidden="true"
         ></i>
-        <p class="leading-tight" style="color:#0B1B14;">
+        <p class="leading-tight" style="color:#1F1F1F;">
           <span class="font-bold" style="font-size:clamp(0.98rem,1.9vw,1.25rem);">A verdade é simples:</span>
           <span class="font-medium" style="font-size:clamp(0.98rem,1.9vw,1.25rem);"> você pode estar pagando </span>
           <span
             class="mt-1 block font-extrabold"
-            style="font-family:'Montserrat',sans-serif; color:#FF5700; font-size:clamp(1.3rem,3vw,1.9rem);"
+            style="font-family:'Montserrat',sans-serif; color:#FF5A00; font-size:clamp(1.3rem,3vw,1.9rem);"
           >
             até 5x mais caro do que deveria.
           </span>

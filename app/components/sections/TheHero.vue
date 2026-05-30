@@ -4,7 +4,7 @@ import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 // Modal do vídeo de apresentação (VSL)
 // TODO: trocar pelo vídeo original — este é apenas de teste
 const showVideo = ref(false)
-const videoSrc = 'https://www.youtube.com/embed/PWP2jw09klM?autoplay=1&rel=0'
+const videoSrc = 'https://www.youtube.com/embed/bxrOLfyYQyQ?autoplay=1&rel=0'
 
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') showVideo.value = false
@@ -25,7 +25,7 @@ onBeforeUnmount(() => {
   <section
     aria-labelledby="hero-title"
     class="w-full flex flex-col items-center px-4 pt-3 pb-10 sm:px-6 md:px-8 md:pt-4 lg:px-12"
-    style="background: linear-gradient(to bottom, #0b1e16, #081510);"
+    style="background: linear-gradient(to bottom, #0F3D24 0%, #00331A 50%, #002010 100%);"
   >
     <main class="flex w-full max-w-4xl flex-col items-center gap-3 md:gap-3.5">
 
@@ -45,17 +45,17 @@ onBeforeUnmount(() => {
       <section class="w-full max-w-3xl px-1 text-center sm:px-2">
         <h1
           id="hero-title"
-          class="mb-2 font-extrabold leading-[1.12] tracking-tight text-white"
-          style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.2rem, 2.6vw, 2.1rem);"
+          class="mb-2 font-extrabold leading-[1.12] tracking-tight"
+          style="font-family: 'Montserrat', sans-serif; color:#F2F2F2; font-size: clamp(1.35rem, 2.9vw, 2.3rem);"
         >
           Pague até 70%
-          <span style="color:#ff5714"> MENOS</span><br class="hidden md:block">
+          <span style="color:#FF6600"> MENOS</span><br class="hidden md:block">
           no seu guarda-roupa –<br class="hidden md:block">
           ou lucre com isso.
         </h1>
-        <p class="mx-auto max-w-2xl font-medium leading-relaxed text-gray-300" style="font-size: clamp(0.9rem, 1.6vw, 1.15rem);">
+        <p class="mx-auto max-w-2xl font-medium leading-relaxed" style="color:#D9D9D9; font-size: clamp(1rem, 1.6vw, 1.125rem);">
           Um método simples, direto e validado por
-          <span class="font-bold" style="color:#fbd63b">39 anos</span>
+          <span class="font-bold" style="color:#F4B321">39 anos</span>
           de experiência na marcenaria.
         </p>
       </section>
@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
       <!-- ── VSL ── -->
       <section
         class="relative w-full max-w-[540px] overflow-hidden rounded-2xl border bg-black"
-        style="border-color: rgba(220,179,96,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5);"
+        style="border-color: rgba(49,92,45,0.55); box-shadow: 0 20px 50px rgba(0,0,0,0.5);"
       >
         <!-- Thumbnail (imagem do guarda-roupa) -->
         <div class="relative aspect-video w-full">
@@ -87,14 +87,14 @@ onBeforeUnmount(() => {
               DESCUBRA COMO ECONOMIZAR
             </p>
             <p class="font-black text-white" style="font-size: clamp(1.7rem,5.5vw,3.6rem); line-height:1; text-shadow:0 2px 10px rgba(0,0,0,0.9);">
-              ATÉ <span style="color:#ff5714">70%</span>
+              ATÉ <span style="color:#FF6A00">70%</span>
             </p>
           </div>
           <div class="flex flex-col items-center">
             <p class="mb-0.5 font-bold tracking-wide text-white" style="font-size: clamp(0.72rem,2vw,1.3rem); text-shadow:0 2px 8px rgba(0,0,0,0.85);">
               OU FATURAR MUITO MAIS
             </p>
-            <p class="font-bold text-green-400" style="font-size: clamp(0.62rem,1.7vw,1.15rem); text-shadow:0 2px 8px rgba(0,0,0,0.9);">
+            <p class="font-bold" style="color:#78A52A; font-size: clamp(0.62rem,1.7vw,1.15rem); text-shadow:0 2px 8px rgba(0,0,0,0.9);">
               COM GUARDA-ROUPAS PLANEJADOS
             </p>
           </div>
@@ -104,14 +104,14 @@ onBeforeUnmount(() => {
         <span
           class="play-ring pointer-events-none absolute left-1/2 top-1/2 z-10 rounded-full"
           aria-hidden="true"
-          style="width:clamp(56px,11vw,80px); height:clamp(56px,11vw,80px); background:rgba(255,87,20,0.5);"
+          style="width:clamp(56px,11vw,80px); height:clamp(56px,11vw,80px); background:rgba(255,100,0,0.5);"
         ></span>
         <button
           type="button"
           aria-label="Reproduzir vídeo de apresentação"
           @click="showVideo = true"
           class="play-pulse absolute left-1/2 top-1/2 z-20 flex items-center justify-center rounded-full"
-          style="width:clamp(56px,11vw,80px); height:clamp(56px,11vw,80px); background:rgba(255,87,20,0.95); box-shadow:0 0 28px rgba(255,87,20,0.45); touch-action:manipulation;"
+          style="width:clamp(56px,11vw,80px); height:clamp(56px,11vw,80px); background:rgba(255,100,0,0.95); box-shadow:0 0 28px rgba(255,100,0,0.45); touch-action:manipulation;"
         >
           <i class="fa-solid fa-play ml-0.5 text-white" style="font-size:clamp(20px,4vw,34px);" aria-hidden="true"></i>
         </button>
@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
           <span class="shrink-0 text-[0.7rem] font-medium tabular-nums sm:text-xs">0:00 / 2:24</span>
           <div class="group relative flex-1">
             <div class="h-1.5 rounded-full bg-gray-600 transition-all group-hover:h-2">
-              <div class="h-full w-0 rounded-full" style="background:#ff5714;" />
+              <div class="h-full w-0 rounded-full" style="background:#FF6400;" />
             </div>
           </div>
           <i class="fa-solid fa-gear shrink-0 text-sm md:text-base"></i>
@@ -138,11 +138,13 @@ onBeforeUnmount(() => {
       <!-- ── CTA ── -->
       <section class="flex w-full flex-col items-center">
         <a
-          href="#oferta"
+          href="https://pay.hotmart.com/F95310077Y"
+          target="_blank"
+          rel="noopener"
           class="flex w-full max-w-[540px] items-center justify-center gap-3 rounded-xl px-5 py-3.5 text-center font-extrabold uppercase leading-tight text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
-          style="font-family:'Montserrat',sans-serif; font-size:clamp(0.9rem,1.8vw,1.15rem); background:#ff5714; box-shadow:0 0 30px rgba(255,87,20,0.3); letter-spacing:0.04em; min-height:52px; touch-action:manipulation;"
-          onmouseover="this.style.background='#e64a0f'; this.style.boxShadow='0 0 40px rgba(255,87,20,0.5)';"
-          onmouseout="this.style.background='#ff5714'; this.style.boxShadow='0 0 30px rgba(255,87,20,0.3)';"
+          style="font-family:'Montserrat',sans-serif; font-size:clamp(1rem,1.9vw,1.25rem); background:#FF6400; box-shadow:0 5px 0 #CC4E00, 0 8px 24px rgba(204,78,0,0.35); letter-spacing:0.04em; min-height:54px; touch-action:manipulation;"
+          onmouseover="this.style.background='#FF7A1A'; this.style.boxShadow='0 3px 0 #CC4E00, 0 10px 28px rgba(204,78,0,0.45)';"
+          onmouseout="this.style.background='#FF6400'; this.style.boxShadow='0 5px 0 #CC4E00, 0 8px 24px rgba(204,78,0,0.35)';"
         >
           QUERO ECONOMIZAR ATÉ 70% AGORA
           <i class="fa-solid fa-chevron-right shrink-0 text-base" aria-hidden="true"></i>
@@ -151,24 +153,24 @@ onBeforeUnmount(() => {
         <!-- Selos -->
         <div
           class="mt-6 grid w-full max-w-[540px] grid-cols-3 items-start gap-2 border-b pb-6 sm:gap-4 md:flex md:items-center md:justify-center md:gap-10"
-          style="border-color: rgba(220,179,96,0.2);"
+          style="border-color: rgba(49,92,45,0.55);"
         >
           <div class="flex flex-col items-center gap-2 text-center md:flex-row md:gap-3 md:text-left">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(220,179,96,0.3); color:#D4AF37;">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(49,92,45,0.6); color:#D4AF37;">
               <i class="fa-solid fa-lock text-lg" aria-hidden="true"></i>
             </div>
             <span class="text-[0.7rem] font-semibold leading-tight tracking-wide text-gray-200 sm:text-sm">ACESSO<br>IMEDIATO</span>
           </div>
-          <div class="hidden h-10 w-px md:block" style="background:rgba(220,179,96,0.2);" aria-hidden="true" />
+          <div class="hidden h-10 w-px md:block" style="background:rgba(49,92,45,0.55);" aria-hidden="true" />
           <div class="flex flex-col items-center gap-2 text-center md:flex-row md:gap-3 md:text-left">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(220,179,96,0.3); color:#D4AF37;">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(49,92,45,0.6); color:#D4AF37;">
               <i class="fa-solid fa-shield-halved text-lg" aria-hidden="true"></i>
             </div>
             <span class="text-[0.7rem] font-semibold leading-tight tracking-wide text-gray-200 sm:text-sm">7 DIAS DE<br>GARANTIA</span>
           </div>
-          <div class="hidden h-10 w-px md:block" style="background:rgba(220,179,96,0.2);" aria-hidden="true" />
+          <div class="hidden h-10 w-px md:block" style="background:rgba(49,92,45,0.55);" aria-hidden="true" />
           <div class="flex flex-col items-center gap-2 text-center md:flex-row md:gap-3 md:text-left">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(74,222,128,0.3); color:#4ade80;">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border" style="background:#122e21; border-color:rgba(49,92,45,0.6); color:#7BA438;">
               <i class="fa-solid fa-award text-lg" aria-hidden="true"></i>
             </div>
             <span class="text-[0.7rem] font-semibold leading-tight tracking-wide text-gray-200 sm:text-sm">MÉTODO<br>VALIDADO</span>
@@ -178,7 +180,7 @@ onBeforeUnmount(() => {
         <!-- Aviso urgência (apenas texto amarelo, sem badge) -->
         <div
           class="mt-5 flex items-center justify-center gap-2.5 px-2 sm:gap-3"
-          style="color:#fbd63b;"
+          style="color:#E8B41A;"
         >
           <i class="fa-solid fa-triangle-exclamation shrink-0 text-base sm:text-lg" aria-hidden="true"></i>
           <span class="text-[0.8rem] font-medium leading-snug sm:text-sm md:text-base">Esse valor promocional pode sair do ar a qualquer momento.</span>
@@ -188,32 +190,32 @@ onBeforeUnmount(() => {
       <!-- ── ESTATÍSTICAS ── -->
       <section
         class="mt-2 w-full rounded-2xl border p-3.5 backdrop-blur-sm sm:p-4 md:p-5"
-        style="background:rgba(12,36,25,0.8); border-color:rgba(220,179,96,0.2); box-shadow:0 20px 40px rgba(0,0,0,0.4);"
+        style="background:rgba(12,36,25,0.8); border-color:rgba(49,92,45,0.55); box-shadow:0 20px 40px rgba(0,0,0,0.4);"
       >
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-3 md:flex md:items-center md:justify-around md:gap-4">
 
           <div class="flex items-center justify-center gap-2.5 text-left md:w-1/3 md:gap-3">
-            <i class="fa-solid fa-file-lines shrink-0 text-3xl leading-none md:text-4xl" style="color:#4ade80;" aria-hidden="true"></i>
+            <i class="fa-solid fa-file-lines shrink-0 text-3xl leading-none md:text-4xl" style="color:#7BA438;" aria-hidden="true"></i>
             <div>
               <div class="text-2xl font-black text-white md:text-4xl">+15</div>
               <div class="text-[0.65rem] font-bold uppercase tracking-widest text-gray-400 sm:text-xs">PROJETOS<br class="hidden sm:block"> PRONTOS</div>
             </div>
           </div>
 
-          <div class="hidden h-16 w-px md:block" style="background:linear-gradient(to bottom,transparent,rgba(220,179,96,0.3),transparent);" aria-hidden="true" />
+          <div class="hidden h-16 w-px md:block" style="background:linear-gradient(to bottom,transparent,rgba(49,92,45,0.6),transparent);" aria-hidden="true" />
 
           <div class="flex items-center justify-center gap-2.5 text-left md:w-1/3 md:gap-3">
-            <i class="fa-solid fa-book-open shrink-0 text-3xl leading-none md:text-4xl" style="color:#4ade80;" aria-hidden="true"></i>
+            <i class="fa-solid fa-book-open shrink-0 text-3xl leading-none md:text-4xl" style="color:#7BA438;" aria-hidden="true"></i>
             <div>
               <div class="text-2xl font-black text-white md:text-4xl">+80</div>
               <div class="text-[0.65rem] font-bold uppercase tracking-widest text-gray-400 sm:text-xs">PÁGINAS DE<br class="hidden sm:block"> CONTEÚDO</div>
             </div>
           </div>
 
-          <div class="hidden h-16 w-px md:block" style="background:linear-gradient(to bottom,transparent,rgba(220,179,96,0.3),transparent);" aria-hidden="true" />
+          <div class="hidden h-16 w-px md:block" style="background:linear-gradient(to bottom,transparent,rgba(49,92,45,0.6),transparent);" aria-hidden="true" />
 
           <div class="flex items-center justify-center gap-2.5 text-left md:w-1/3 md:gap-3">
-            <i class="fa-solid fa-arrow-trend-up shrink-0 text-3xl leading-none md:text-4xl" style="color:#4ade80;" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-trend-up shrink-0 text-3xl leading-none md:text-4xl" style="color:#7BA438;" aria-hidden="true"></i>
             <div>
               <div class="text-2xl font-black uppercase tracking-wider text-white md:text-xl">MÉTODO</div>
               <div class="text-[0.65rem] font-bold uppercase tracking-widest text-gray-400 sm:text-xs">TESTADO E<br class="hidden sm:block"> COMPROVADO</div>

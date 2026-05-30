@@ -118,7 +118,9 @@ onBeforeUnmount(() => observer?.disconnect())
 
       <!-- ── CTA ── -->
       <a
-        href="#checkout"
+        href="https://pay.hotmart.com/F95310077Y"
+        target="_blank"
+        rel="noopener"
         data-reveal
         class="mt-6 flex items-center justify-center gap-4 rounded-xl border-[3px] px-6 py-4 text-center text-white transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0.5"
         style="background:linear-gradient(180deg,#FF7200,#FF5A00); border-color:#FF8B1A; box-shadow:0 5px 0 #D64000; touch-action:manipulation;"
