@@ -28,3 +28,6 @@ logs
 
 # Build zips para hospedagem
 *.zip
+
+# Arquivos de referência internos (não publicar/versionar)
+docs/
